@@ -1,0 +1,11 @@
+{
+    "android": {
+        "release": {
+            "keystore": "millave.keystore",
+            "storePassword": "Vonage123",
+            "alias": "millave",
+            "password": "Vonage123",
+            "keystoreType": ""
+        }
+    }
+}

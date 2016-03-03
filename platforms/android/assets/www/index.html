@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+    <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDDXdrkaAM-li7gDpLdOEMJ5NUnTlIdA10&sensor=false"></script>
+    <script src="js/json2.js"></script>
+    <script src="js/jquery-2.0.3.min.js"></script>
+    <script src="js/jquery.mobile-1.4.5.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.5.css" />
+    <title>Rutinas</title>
+</head>
+
+<body>
+    <div data-role="page" id="home">
+        <div data-role="header">
+            <h1>Inicio</h1>
+            <div data-role="navbar">
+                <ul>
+                    <li>
+                        <a href="#home" data-transition="none" data-icon="home">Inicio</a>
+                    </li>
+                    <li>
+                        <a href="#startTracking" data-transition="none" data-icon="plus">Grabar rutina</a>
+                    </li>
+                    <li>
+                        <a href="#history" data-transition="none" data-icon="star">Historial</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div data-role="content">
+            <p align="center">Bienvenid@, usted puede registrar sus rutinas usando la característica GPS de su dispositivo.</p>
+            <button id="home_network_button" data-icon="check">Acceso a Internet habilitado</button>
+            <button id="home_clearstorage_button">Limpiar el almacenamiento local</button>
+            <button id="home_seedgps_button">Cargar datos GPS de prueba</button>
+        </div>
+    </div>
+    <div data-role="page" id="startTracking">
+        <div data-role="header">
+            <h1>Ejercicio</h1>
+            <div data-role="navbar">
+                <ul>
+                    <li>
+                        <a href="#home" data-transition="none" data-icon="home">Inicio</a>
+                    </li>
+                    <li>
+                        <a href="#startTracking" data-transition="none" data-icon="plus">Grabar rutina</a>
+                    </li>
+                    <li>
+                        <a href="#history" data-transition="none" data-icon="star">Historial</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div data-role="content">
+            <p id="startTracking_status"></p>
+            <div data-role="fieldcontain" class="ui-hide-label">
+                <label for="track_id">Nombre / ID</label>
+                <input type="text" name="track_id" id="track_id" placeholder="Nombre o ID de la rutina" />
+            </div>
+            <button data-role="button" id="startTracking_start">Iniciar</button>
+            <button data-role="button" id="startTracking_stop">Detener</button>
+        </div>
+    </div>
+    <div data-role="page" id="history">
+        <div data-role="header">
+            <h1>Historial</h1>
+            <div data-role="navbar">
+                <ul>
+                    <li>
+                        <a href="#home" data-transition="none" data-icon="home">Inicio</a>
+                    </li>
+                    <li>
+                        <a href="#startTracking" data-transition="none" data-icon="plus">Grabar rutina</a>
+                    </li>
+                    <li>
+                        <a href="#history" data-transition="none" data-icon="star">Historial</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div data-role="content">
+            <p id="tracks_recorded"></p>
+            <ul data-role="listview" id="history_tracklist">
+            </ul>
+        </div>
+    </div>
+    <div data-role="page" id="track_info">
+        <div data-role="header">
+            <h1>Detalles de la rutina</h1>
+            <div data-role="navbar">
+                <ul>
+                    <li>
+                        <a href="#home" data-transition="none" data-icon="home">Inicio</a>
+                    </li>
+                    <li>
+                        <a href="#startTracking" data-transition="none" data-icon="plus">Grabar rutina</a>
+                    </li>
+                    <li>
+                        <a href="#history" data-transition="none" data-icon="star">Historial</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div data-role="content">
+            <p id="track_info_info"></p>
+            <div id="map_canvas" class="mapCanvas">
+            </div>
+        </div>
+    </div>
+    <div data-role="dialog" id="dialogPage">
+        <div data-role="header">
+            <h2>Rutinas</h2>
+        </div>
+        <div role="main" class="ui-content">
+            <p id="dialogPageMessage"></p>
+        </div>
+    </div>
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="js/ejercicio.js"></script>
+</body>
+
+</html>
